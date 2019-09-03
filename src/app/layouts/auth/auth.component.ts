@@ -36,7 +36,7 @@ export class AuthComponent implements OnInit {
     if(result.accessGranted){
       this.globalShared.user = result.user;
       window.localStorage.setItem('currentUser', JSON.stringify(this.globalShared.user));
-      this.isLogged.emit(false);
+      this.isLogged.emit(true);
     }
   }
 }
