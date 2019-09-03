@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GlobalShared } from '../../app.global';
+import FAQ from './faq.model';
 
 @Injectable({
     providedIn: 'root',
@@ -21,18 +22,19 @@ export class FaqService {
         );
     }
 
-    public addQuestion = (c: any): Promise<any> => {
+    public addQuestion = (newQuestion: FAQ): Promise<any> => {
+        delete(newQuestion.id);
         return new Promise((resolve,reject) => 
-            this.http.post<any>(`${this.url}/api/faq`,c).subscribe(
+            this.http.post<any>(`${this.url}/api/faq`, newQuestion).subscribe(
                 success => resolve(success),
                 error => reject(error)
             )
         );
     }
 
-    public updateQuestion = (c: any): Promise<any> => {
+    public updateQuestion = (question: FAQ): Promise<any> => {
         return new Promise((resolve,reject) => 
-            this.http.put<any>(`${this.url}/api/faq`, c).subscribe(
+            this.http.put<any>(`${this.url}/api/faq`, question).subscribe(
                 success => resolve(success),
                 error => reject(error)
             )

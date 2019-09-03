@@ -35,6 +35,8 @@ export class FaqComponent implements OnInit {
 
     let result = await this.faqServices.addQuestion(this.newQuestion);
     console.log(result);
+    this.newQuestion.question = '';
+    this.newQuestion.answer = '';
     this.getQuestions();
   }
   
