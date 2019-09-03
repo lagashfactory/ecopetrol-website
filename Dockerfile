@@ -18,4 +18,4 @@ RUN npm install -g @angular/cli@8.1.0
 RUN $(npm bin)/ng build --prod
 
 FROM nginx:1.15.8-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=base /app/dist /usr/share/nginx/html
