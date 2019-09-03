@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <form (submit)="addQuestion($event)">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h3>Agregar pregunta</h3>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <label>Título de la pregunta</label>
+                        <input
+                            id="question" name="question" class="form-control"
+                            required autocomplete="off"
+                            [(ngModel)]="newQuestion.question" #question="ngModel" type="question" />
+                        
+                        <div *ngIf="question.invalid && (question.dirty || question.touched)"
+                            class="alert alert-danger">
+                            <div *ngIf="question.errors.required">
+                                La pregunta es requerida.
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <label><b>Respuesta</b></label>
+                        <textarea
+                            id="response" name="response" class="form-control"
+                            required autocomplete="off"
+                            [(ngModel)]="newQuestion.response" #response="ngModel" type="response" ></textarea>
+                        
+                        <div *ngIf="response.invalid && (response.dirty || response.touched)"
+                            class="alert alert-danger">
+                            <div *ngIf="response.errors.required">
+                                La respuesta es requerida.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <ul>
+            <li *ngFor="let question of questions">
+                <div class="card">
+                    <div class="card-body">
+                        <p style="margin-bottom: 10px"><b>{{$index + 1}}.- {{question.question}}</b></p>
+                        <p>{{question.answer}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'https://api-ecopetrol-dev.azurewebsites.net',
-  urlIdentity: 'https://identityserver-ecopetrol-dev.azurewebsites.net'
-
+  url: 'https://api-ecopetrol-qa.azurewebsites.net',
+  urlIdentity: 'https://identityserver-ecopetrol-qa.azurewebsites.net'
 };
 
 /*
