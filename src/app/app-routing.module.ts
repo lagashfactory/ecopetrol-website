@@ -8,19 +8,19 @@ export const Approutes: Routes = [
     path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/starter', pathMatch: 'full' },
+      { path: '', redirectTo: '/weather', pathMatch: 'full' },
       {
-        path: 'starter',
+        path: 'weather',
         loadChildren: './starter/starter.module#StarterModule'
       },
-      {
-        path: 'component',
-        loadChildren: './component/component.module#ComponentsModule'
-      }
+      // {
+      //   path: 'component',
+      //   loadChildren: './component/component.module#ComponentsModule'
+      // }
     ]
   },
   {
     path: '**',
-    redirectTo: '/starter'
+    redirectTo: '/weather'
   }
 ];

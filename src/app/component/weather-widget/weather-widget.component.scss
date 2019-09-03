@@ -1,0 +1,66 @@
+.main-weather {
+    background-image: url("/assets/images/bitmap.png");
+    position: relative;
+    mix-blend-mode: multiply;
+    border-radius: 6px;
+    .upper {
+        position: relative;
+        z-index: 10;
+        .border-left {
+            margin-left: 40px;
+            margin-top: 25px;
+            border-left: 2px solid white;
+            p {
+                b{
+                    font-weight: 700;
+                }
+                font-size: 22px;
+                color: white;
+                margin:0;
+                letter-spacing: 1.22px;
+            }
+        }
+        .center-info {
+            width: 50%;
+            margin: 60px auto;
+            text-align: center;
+            color: white;
+            h1 {
+                font-size: 85px;
+                display: inline-flex;
+                font-weight: 300;
+                margin: 0;
+                div {
+                    display: grid;
+                    height: 63px;
+                    span {
+                        font-size: 28px;
+                    }
+                }
+            }
+            .mid-line {
+                width: 11%;
+                height: 3px;
+                margin: 0 auto 0 auto;
+                border-bottom: 3px solid #ffffff;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                letter-spacing: 5px;
+            }
+            p {
+                letter-spacing: 2px;
+            }
+        }
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(246deg, rgba(32, 196, 234, 0.7), rgba(53, 131, 223, 0.7));;
+
+    }
+}

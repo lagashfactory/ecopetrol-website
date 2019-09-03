@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalShared } from '../../app.global';
+
 declare var $: any;
 
 @Component({
@@ -8,14 +10,14 @@ declare var $: any;
   styleUrls: ['./full.component.scss']
 })
 export class FullComponent implements OnInit {
-  constructor(public router: Router) {}
+  constructor(public router: Router, private globalShared: GlobalShared) {}
 
   public innerWidth: any;
   public defaultSidebar: any;
   public showMobileMenu = false;
   public expandLogo = false;
   public sidebartype = 'full';
-  public show = false;
+  public show = this.globalShared.userLoged;
   
   Logo() {
     this.expandLogo = !this.expandLogo;
@@ -24,6 +26,7 @@ export class FullComponent implements OnInit {
   ngOnInit() {
     if (this.router.url === '/') {
       this.router.navigate(['/starter']);
+      this.show = this.globalShared.userLoged;
     }
     this.defaultSidebar = this.sidebartype;
     this.handleSidebar();
@@ -58,7 +61,6 @@ export class FullComponent implements OnInit {
   }
 
   public isLogged = (ev) => {
-    console.log(ev)
     this.show = ev;
   }
 }

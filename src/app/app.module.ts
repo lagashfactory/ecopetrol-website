@@ -26,6 +26,8 @@ import { SpinnerComponent } from './shared/spinner.component';
 
 // CUSTOM
 import { AuthComponent } from './layouts/auth/auth.component';
+import { GlobalShared } from './app.global';
+// LIBS
 
 @NgModule({
   declarations: [
@@ -45,13 +47,14 @@ import { AuthComponent } from './layouts/auth/auth.component';
     FormsModule,
     HttpClientModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(Approutes, { useHash: false })
+    RouterModule.forRoot(Approutes, { useHash: false }),
   ],
   providers: [
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
-    }
+    },
+    GlobalShared
   ],
   bootstrap: [AppComponent]
 })
