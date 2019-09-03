@@ -1,4 +1,4 @@
 export default class Auth {
-    public name: string;
+    public username: string;
     public password: string;
 }
