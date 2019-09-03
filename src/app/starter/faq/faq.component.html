@@ -29,13 +29,13 @@
                     <div class="input-container">
                         <label><b>Respuesta</b></label>
                         <textarea
-                            id="response" name="response" class="form-control"
+                            id="answer" name="answer" class="form-control"
                             required autocomplete="off"
-                            [(ngModel)]="newQuestion.response" #response="ngModel" type="response" ></textarea>
+                            [(ngModel)]="newQuestion.answer" #answer="ngModel" type="answer" ></textarea>
                         
-                        <div *ngIf="response.invalid && (response.dirty || response.touched)"
+                        <div *ngIf="answer.invalid && (answer.dirty || answer.touched)"
                             class="alert alert-danger">
-                            <div *ngIf="response.errors.required">
+                            <div *ngIf="answer.errors.required">
                                 La respuesta es requerida.
                             </div>
                         </div>
