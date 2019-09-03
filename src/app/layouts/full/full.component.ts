@@ -56,4 +56,9 @@ export class FullComponent implements OnInit {
       default:
     }
   }
+
+  public isLogged = (ev) => {
+    console.log(ev)
+    this.show = ev;
+  }
 }

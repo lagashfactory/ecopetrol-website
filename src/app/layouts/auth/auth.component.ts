@@ -1,5 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import Auth from './auth.model';
+import { AuthService } from './auth.services';
 
 declare var $: any;
 
@@ -12,17 +14,19 @@ declare var $: any;
 export class AuthComponent implements OnInit {
 
   // public authForm: FormGroup;
-  public auth: {name: string, password: string} = {
+  public auth: Auth = {
     name: '',
     password: '', 
   };
 
-  constructor() {}
+  @Output() public isLogged = new EventEmitter<boolean>();
 
-  ngOnInit(): void{
-  }
+  constructor(private authService: AuthService) {}
 
-  public login = (ev) => {
+  ngOnInit(): void {}
 
+  public login = async (ev) => {
+    let result = await this.authService.auth(this.auth);
+    this.isLogged.emit(true);
   }
 }
