@@ -14,19 +14,12 @@ export class AuthComponent implements OnInit {
   // public authForm: FormGroup;
   public auth: {name: string, password: string} = {
     name: '',
-    password: '',
+    password: '', 
   };
 
   constructor() {}
 
   ngOnInit(): void{
-    // this.authForm = new FormGroup({
-    //   'name': new FormControl(this.auth.name, [
-    //     Validators.required,
-    //     Validators.minLength(4)
-    //   ]),
-    //   'password': new FormControl(this.auth.password, Validators.required)
-    // });
   }
 
   public login = (ev) => {
