@@ -15,7 +15,8 @@ export class FullComponent implements OnInit {
   public showMobileMenu = false;
   public expandLogo = false;
   public sidebartype = 'full';
-
+  public show = false;
+  
   Logo() {
     this.expandLogo = !this.expandLogo;
   }

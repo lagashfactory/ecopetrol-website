@@ -24,6 +24,9 @@ import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 
+// CUSTOM
+import { AuthComponent } from './layouts/auth/auth.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ import { SpinnerComponent } from './shared/spinner.component';
     FullComponent,
     NavigationComponent,
     SidebarComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    // CUSTOM
+    AuthComponent
   ],
   imports: [
     CommonModule,

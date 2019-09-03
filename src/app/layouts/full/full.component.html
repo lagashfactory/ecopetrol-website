@@ -1,9 +1,11 @@
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
+<layout-auth *ngIf="!show"></layout-auth>
 <div id="main-wrapper" [ngClass]="{'show-sidebar': showMobileMenu}" dir="ltr" data-theme="light" data-layout="vertical"
     [attr.data-sidebartype]="sidebartype" data-sidebar-position="absolute" data-header-position="fixed"
-    data-boxed-layout="full">
+    data-boxed-layout="full"
+    *ngIf="show">
     <!-- ============================================================== -->
     <!-- Topbar header - style you can find in topbar.scss -->
     <!-- ============================================================== -->
